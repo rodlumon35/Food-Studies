@@ -4,7 +4,7 @@ Food Studies es una herramienta que busca brindar un lugar donde compartir su tr
 ## Integrantes
 
 - Rodríguez Mata, Luis David - [Rodlumon35](https://github.com/rodlumon35).
-- Torres, Javier Ignacio -
+- Torres, Javier Ignacio - [Jjtorres93](https://github.com/jjtorres93).
 
 ## Centro Educativo 
 - IES Las Galletas
