@@ -6,7 +6,10 @@ const express = require("express"),
 
 //Database
 mongoose
-  .connect("mongodb://localhost/food-studies")
+  // .connect("mongodb://localhost/food-studies") <---- Despliegue local
+  .connect(
+    "mongodb+srv://root:Food-Studies-Api@cluster0.ldjqu.mongodb.net/test"
+  )
   .then((db) => console.log("DB is connected"))
   .catch((e) => console.error(e));
 
@@ -19,7 +22,8 @@ app.use(express.json());
 app.use(cors());
 
 //Routes
-app.use("/user", cors(), require("./routes/user"));
+app.use("/api/user", cors(), require("./routes/user"));
+app.use("/api/university", require("./routes/university"));
 
 //Server
 // -------------------------- This is for get an Ip

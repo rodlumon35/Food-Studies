@@ -17,13 +17,16 @@ const UserSchema = new Schema({
   },
   followers: {
     type: [String],
+    required: true,
   },
   following: {
     type: [String],
+    required: true,
   },
   followingHashtags: {
     type: [String],
-  }
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("User", UserSchema);
