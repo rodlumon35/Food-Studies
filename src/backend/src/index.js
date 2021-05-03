@@ -24,6 +24,7 @@ app.use(cors());
 //Routes
 app.use("/api/user", cors(), require("./routes/user"));
 app.use("/api/university", require("./routes/university"));
+app.use("/api/publication", require("./routes/publication"));
 
 app.listen(app.get("port"), () => {
   console.log(`server working on http://localhost:${app.get("port")}`);
