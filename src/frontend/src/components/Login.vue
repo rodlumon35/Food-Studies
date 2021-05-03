@@ -110,3 +110,23 @@ export default {
   },
 };
 </script>
+
+<style>
+nav {
+  background-color: #e5f0ff;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+}
+
+
+.logo div img {
+  width: 40vw;
+  min-width: 300px;
+}
+
+.btn {
+  background-color: #3ddd92;
+}
+</style>
