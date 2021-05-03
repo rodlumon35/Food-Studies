@@ -1,3 +1,20 @@
+<template>
+  <div id="register">
+    <register-form></register-form>
+  </div>
+</template>
+
+<script>
+import RegisterForm from "../components/Register.vue";
+
+export default {
+  components: {
+    RegisterForm,
+  },
+};
+</script>
+
+<style scope>
 body {
   background-image: linear-gradient(
     to right top,
@@ -19,28 +36,18 @@ body {
   min-width: 100px;
 }
 
-nav {
-  background-color: #e5f0ff;
+#register {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .nav-link {
   font-size: 1.5rem;
 }
 
-footer {
-  background-color: #e5f0ff;
-}
-
 .btn {
   background-color: #3ddd92;
 }
-
-.illustration img {
-  width: 50vw;
-  min-width: 300px;
-}
-
-.logo div img {
-  width: 40vw;
-  min-width: 300px;
-}
+</style>

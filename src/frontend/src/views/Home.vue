@@ -1,10 +1,10 @@
 <template>
-  <div id="index-page">
+  <div class="home">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div>
-        <a href="#" class="brand-logo"
-          ><img id="logo" src="img/logo vectorial.svg" alt="logo"
-        /></a>
+        <div class="brand-logo">
+          <img src="img/logo vectorial.svg" alt="logo" id="logo" />
+        </div>
       </div>
       <div>
         <button
@@ -25,10 +25,12 @@
       >
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" @click="changePage('login')">Login</a>
+            <router-link class="nav-link" to="/user/login">Login</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="changePage('register')">Register</a>
+            <router-link class="nav-link" to="/user/register"
+              >Register</router-link
+            >
           </li>
         </ul>
       </div>
@@ -47,8 +49,8 @@
           Exercitationem, tenetur incidunt!
         </p>
         <div>
-          <a @click="changePage('register')" class="btn btn-lg text-light"
-            >Try now</a
+          <router-link to="/user/register" class="btn btn-lg text-light"
+            >Try now</router-link
           >
         </div>
       </div>
@@ -63,14 +65,51 @@
     </section>
   </div>
 </template>
+<style>
+body {
+  background-image: linear-gradient(
+    to right top,
+    #f5fdea,
+    #effff8,
+    #defbff,
+    #c6f0ee,
+    #cdf3e3
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
 
-<script>
-export default {
-  name: "index-page",
-  methods: {
-    changePage(page) {
-      this.$emit("change-page", page);
-    },
-  },
-};
-</script>
+#logo {
+  width: 13vw;
+  min-width: 150px;
+}
+
+nav {
+  background-color: #e5f0ff;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+}
+
+footer {
+  background-color: #e5f0ff;
+}
+
+.btn {
+  background-color: #3ddd92;
+}
+
+.illustration img {
+  width: 50vw;
+  min-width: 300px;
+}
+
+.logo div img {
+  width: 40vw;
+  min-width: 300px;
+}
+</style>

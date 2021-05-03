@@ -25,22 +25,6 @@ app.use(cors());
 app.use("/api/user", cors(), require("./routes/user"));
 app.use("/api/university", require("./routes/university"));
 
-//Server
-// -------------------------- This is for get an Ip
-// let address,
-//   ifaces = require("os").networkInterfaces();
-
-// Object.keys(ifaces).forEach((dev) => {
-//   ifaces[dev].filter((details) => {
-//     if (details.family === "IPv4" && details.internal === false) {
-//       address = details.address;
-//     }
-//   });
-// });
-// app.listen(app.get("port"), address, () => {
-//   console.log(`server working on http://${address}:${app.get("port")}`);
-// });
-
 app.listen(app.get("port"), () => {
   console.log(`server working on http://localhost:${app.get("port")}`);
 });
