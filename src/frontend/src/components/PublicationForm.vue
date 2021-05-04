@@ -1,24 +1,42 @@
 <template>
   <div>
-    <div>
-      <label for="title">Title</label>
-      <input type="text" name="title" id="title" v-model="pub.title" /><br />
-      <label for="content">Article</label>
-      <textarea
-        name="content"
-        id="content"
-        cols="30"
-        rows="10"
-        v-model="pub.content"
-      ></textarea><br>
-      <label for="publisher">Author</label>
-      <input type="text" name="publisher" id="publisher" v-model="pub.publisher"/>
-      <button @click="publicate">Send</button><button>Cancel</button>
+    <div class="bg-light p-4 d-flex flex-column">
+      <div>
+        <h1 class="display-4">Add Publication</h1>
+      </div>
+      <div>
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" v-model="pub.title" />
+      </div>
+      <div>
+        <label for="content">Article</label>
+        <textarea
+          name="content"
+          id="content"
+          cols="30"
+          rows="10"
+          v-model="pub.content"
+        ></textarea>
+      </div>
+      <div>
+        <label for="publisher">Author</label>
+        <input
+          type="text"
+          name="publisher"
+          id="publisher"
+          v-model="pub.publisher"
+        />
+      </div>
+      <div class="d-flex justify-content-between">
+        <div @click="publicate" class="btn bg-primary text-light">Send</div>
+        <div class="btn bg-danger text-light">Cancel</div>
+      </div>
     </div>
   </div>
 </template>
 <script>
-const apiRoot = "https://food-studies-api.herokuapp.com/api/publication/";
+const apiRoot =
+  "https://food-studies-api.herokuapp.com/api/publication/publish";
 
 export default {
   name: "publication-form",
@@ -46,8 +64,9 @@ export default {
             },
             body: JSON.stringify(_pub),
           };
-        let response = await fetch(`${apiRoot}publish`, settings),
+        let response = await fetch(`${apiRoot}`, settings),
           data = await response.json();
+        console.log(data);
       }
     },
   },

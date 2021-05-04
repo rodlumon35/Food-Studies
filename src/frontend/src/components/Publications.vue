@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-light d-flex justify-content-between container shadow-lg m-5 p-5 flex-column"
+    class="bg-light d-flex justify-content-between container-fluid shadow-lg m-5 p-5 flex-column"
   >
     <div>
       <header class="d-flex justify-content-between">
@@ -22,6 +22,9 @@
           <div>{{ publication.publisher }}</div>
         </header>
       </div>
+      <div class="m-3">
+          <h3>{{ publication.title }}</h3>
+      </div>
       <div class="body d-flex justify-content-between m-4">
         <div class="content">{{ publication.content }}</div>
         <div
@@ -31,6 +34,10 @@
           <div>pdf</div>
           <div><i class="fas fa-download"></i></div>
         </div>
+      </div>
+      <div class="buttons d-flex justify-content-between">
+          <div class="btn btn-lg display-4 text-light col-5">Show Comments</div>
+          <div class="btn btn-lg display-4 text-light col-5">Comment</div>
       </div>
       <hr class="w-100" />
     </div>
