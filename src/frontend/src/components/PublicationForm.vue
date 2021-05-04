@@ -4,11 +4,11 @@
       <div>
         <h1 class="display-4">Add Publication</h1>
       </div>
-      <div>
+      <div class="d-flex flex-column mt-2">
         <label for="title">Title</label>
         <input type="text" name="title" id="title" v-model="pub.title" />
       </div>
-      <div>
+      <div class="d-flex flex-column mt-2">
         <label for="content">Article</label>
         <textarea
           name="content"
@@ -18,7 +18,7 @@
           v-model="pub.content"
         ></textarea>
       </div>
-      <div>
+      <div class="d-flex flex-column mt-2">
         <label for="publisher">Author</label>
         <input
           type="text"
@@ -27,7 +27,7 @@
           v-model="pub.publisher"
         />
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between mt-2">
         <div @click="publicate" class="btn bg-primary text-light">Send</div>
         <div class="btn bg-danger text-light">Cancel</div>
       </div>
