@@ -12,7 +12,6 @@ const PublicationSchema = new Schema({
   },
   interests: {
     type: String,
-    required: true,
   }
 });
 
