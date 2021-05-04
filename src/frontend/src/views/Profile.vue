@@ -119,6 +119,9 @@
       </div>
     </div>
     <div class="container mt-5 d-flex justify-content-center">
+      <publication-form></publication-form>
+    </div>
+    <div class="container mt-5 d-flex justify-content-center">
       <publication-component></publication-component>
     </div>
   </div>
@@ -128,11 +131,13 @@
 import searchBar from "../components/SearchBar";
 import logo from "../../public/img/logo vectorial.svg";
 import publicationComponent from "../components/Publications";
+import publicationForm from "../components/PublicationForm";
 
 export default {
   components: {
     searchBar,
     publicationComponent,
+    publicationForm,
   },
   data() {
     return {
