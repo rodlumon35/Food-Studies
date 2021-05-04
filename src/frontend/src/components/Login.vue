@@ -71,7 +71,7 @@
 <script>
 import logo from "../../public/img/logo vectorial.svg";
 //const apiRoot = "http://localhost:8000/user/";
-const apiRoot = "https://food-studies-api.herokuapp.com/api/user/"
+const apiRoot = "https://food-studies-api.herokuapp.com/api/user/";
 
 export default {
   name: "login-form",
@@ -101,7 +101,9 @@ export default {
         let response = await fetch(`${apiRoot}login`, settings),
           data = await response.json();
         if (data.status !== "ERROR") {
+          localStorage.setItem("user_id", _user._id);
           this.logged = true;
+          this.$router.push("/user/profile");
         } else {
           this.error = true;
         }
@@ -119,7 +121,6 @@ nav {
 .nav-link {
   font-size: 1.5rem;
 }
-
 
 .logo div img {
   width: 40vw;
