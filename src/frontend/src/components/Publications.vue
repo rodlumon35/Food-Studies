@@ -1,23 +1,28 @@
 <template>
   <div
-    class="bg-light d-flex justify-content-between container m-5 p-5 flex-column"
+    class="bg-light d-flex justify-content-between container shadow-lg m-5 p-5 flex-column"
   >
     <div>
       <header class="d-flex justify-content-between">
         <h1>Publications</h1>
-        <i class="fas fa-plus-circle"></i>
+        <i class="fas fa-plus-circle" id="add"></i>
       </header>
     </div>
-    <div v-for="publication in publicationsList" :key="publication._id">
+    <div
+      v-for="publication in publicationsList"
+      :key="publication._id"
+      :id="publication._id"
+      class="publication"
+    >
       <div>
         <header
-          class="d-flex justify-content-between border border-dark rounded"
+          class="d-flex justify-content-between border p-2 border-dark rounded"
         >
           <div><i class="fas fa-user"></i></div>
           <div>{{ publication.publisher }}</div>
         </header>
       </div>
-      <div class="body">
+      <div class="body d-flex justify-content-between m-4">
         <div class="content">{{ publication.content }}</div>
         <div
           class="col-4 border border-dark d-flex flex-column justify-content-between"
@@ -27,6 +32,7 @@
           <div><i class="fas fa-download"></i></div>
         </div>
       </div>
+      <hr class="w-100" />
     </div>
   </div>
 </template>
@@ -55,3 +61,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.publication {
+    background-color: rgb(244, 248, 247);
+    padding: 2%;
+    margin: 2% 0;
+}
+#add {
+    font-size: 2em
+}
+#add:hover {
+    cursor: pointer;
+}
+</style>
