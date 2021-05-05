@@ -159,10 +159,16 @@ export default {
         ? (this.user.checks.username = true)
         : (this.user.checks.username = false);
     },
+    checkLogin () {
+      if (sessionStorage.getItem("user")) {        
+          this.$router.push("/user/profile");
+      }
+    }
   },
   mounted() {
     this.registered = false;
     this.getAvailableUsernames();
+    this.checkLogin();
   },
 };
 </script>

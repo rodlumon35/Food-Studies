@@ -35,7 +35,7 @@
       </ul>
       <form class="form-inline">
         <input
-        id="searchBar"
+          id="searchBar"
           class="form-control mr-sm-2"
           type="search"
           placeholder="Search"
@@ -51,7 +51,7 @@
       id="navbarSupportedContent"
     ></div>
 
-    <div><a class="nav-link">Logout</a></div>
+    <div><a class="nav-link" @click="logout">Logout</a></div>
   </nav>
 </template>
 
@@ -64,6 +64,11 @@ export default {
     return {
       logo: logo,
     };
+  },
+  methods: {
+    logout() {
+      sessionStorage.removeItem("user");
+    },
   },
 };
 </script>
@@ -80,7 +85,7 @@ nav {
 .btn {
   background-color: #3ddd92;
 }
-#searchBar{
+#searchBar {
   width: 1000px;
 }
 </style>

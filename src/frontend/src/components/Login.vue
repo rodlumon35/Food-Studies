@@ -101,7 +101,8 @@ export default {
         let response = await fetch(`${apiRoot}login`, settings),
           data = await response.json();
         if (data.status !== "ERROR") {
-          localStorage.setItem("user_id", _user._id);
+          console.log(data);
+          sessionStorage.setItem("user", data.data.username);
           this.logged = true;
           this.$router.push("/user/profile");
         } else {
@@ -109,6 +110,14 @@ export default {
         }
       }
     },
+    checkLogin () {
+      if (sessionStorage.getItem("user")) {        
+          this.$router.push("/user/profile");
+      }
+    }
+  },
+  mounted() {
+    this.checkLogin();
   },
 };
 </script>

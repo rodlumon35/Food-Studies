@@ -45,7 +45,7 @@ export default {
       pub: {
         title: "",
         content: "",
-        publisher: "",
+        publisher: sessionStorage.getItem("user"),
       },
     };
   },
